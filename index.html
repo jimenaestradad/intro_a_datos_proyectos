@@ -1,17 +1,190 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio - Jimena Estrada</title>
+  <style>
+    :root {
+      --bg: #f7f4ff;
+      --bg-accent: #ede3ff;
+      --primary: #6d28d9;
+      --primary-dark: #4c1d95;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --shadow: 0 18px 45px rgba(109, 40, 217, 0.14);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(109, 40, 217, 0.14), transparent 32%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-accent) 100%);
+      min-height: 100vh;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px 30px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 4vw, 4.2rem);
+      color: var(--primary-dark);
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin: 14px auto 0;
+      max-width: 700px;
+      font-size: 1.15rem;
+      color: var(--muted);
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 10px 0 80px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(109, 40, 217, 0.08);
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 55px rgba(109, 40, 217, 0.18);
+    }
+
+    .card h3 {
+      margin: 0 0 14px;
+      font-size: 1.4rem;
+      color: var(--primary);
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      margin-top: 18px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), #8b5cf6);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 10px 24px rgba(109, 40, 217, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(109, 40, 217, 0.32);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px 20px 50px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 820px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .card {
+        min-height: auto;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Portafolio de Jimena Estrada</h1>
-  <p>Proyectos y evidencias de la clase de Introducción a Datos 2026.</p>
-  <ul>
-    <li>Práctica EDA en Databricks</li>
-    <li>Ejercicios de gráficos con Python</li>
-    <li>Manejo de metadata</li>
-  </ul>
+
+  <header class="hero">
+    <h1>Portafolio - Jimena Estrada</h1>
+    <p>Proyectos y evidencias de la clase de Introducción a Datos</p>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+      <article class="card">
+        <div>
+          <h3>Práctica EDA</h3>
+          <p>Análisis exploratorio de datos usando Python, Pandas y Seaborn.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>Visualización de datos</h3>
+          <p>Creación de gráficos como scatter plot, histogramas y barras.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>Manejo de metadata</h3>
+          <p>Análisis de metadata usando Python y línea de comandos.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3>Repositorio</h3>
+          <p>Accede al proyecto completo en GitHub.</p>
+          <a class="btn" href="https://github.com/jimenaestradad/intro_a_datos_proyectos" target="_blank" rel="noopener noreferrer">
+            Ver en GitHub
+          </a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="footer">
+    Hecho con GitHub Pages
+  </div>
+
 </body>
 </html>
